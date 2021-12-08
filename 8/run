@@ -1,0 +1,9 @@
+#! /bin/bash
+
+./in.py | swipl pre.pl 1.pl > /dev/null 2>&1
+echo -n 'Task 1: '
+egrep '1|4|7|8' out.txt | wc -l
+
+./in.py | swipl pre.pl 2.pl > /dev/null 2>&1
+echo -n 'Task 2: '
+cat out.txt | paste -sd+ | bc
